@@ -1,0 +1,260 @@
+/* Hero.css */
+.hero {
+  /* Base hero styles */
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Rubik', sans-serif;
+}
+
+.hero__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero__content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero__subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.hero__description {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero__primary-action {
+  /* Primary action styling handled by child component */
+}
+
+.hero__secondary-action {
+  /* Secondary action styling handled by child component */
+}
+
+.hero__custom-content {
+  margin-top: 32px;
+}
+
+/* Default variant - Blue gradient */
+.hero--default {
+  background: linear-gradient(135deg, #0181F5 0%, #045ff1 100%);
+  color: white;
+}
+
+.hero--default .hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero--default .hero__title {
+  color: white;
+}
+
+.hero--default .hero__description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Light variant */
+.hero--light {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #2c3e50;
+}
+
+.hero--light .hero__subtitle {
+  color: #6c757d;
+  background: rgba(108, 117, 125, 0.1);
+}
+
+.hero--light .hero__title {
+  color: #2c3e50;
+}
+
+.hero--light .hero__description {
+  color: #6c757d;
+}
+
+/* Dark variant */
+.hero--dark {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+}
+
+.hero--dark .hero__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero--dark .hero__title {
+  color: white;
+}
+
+.hero--dark .hero__description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Success variant */
+.hero--success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.hero--success .hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero--success .hero__title {
+  color: white;
+}
+
+.hero--success .hero__description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Image overlay variant */
+.hero--image {
+  color: white;
+  position: relative;
+}
+
+.hero--image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero--image .hero__container {
+  z-index: 2;
+}
+
+.hero--image .hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero--image .hero__title {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero--image .hero__description {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Centered variant */
+.hero--centered .hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Minimal variant */
+.hero--minimal {
+  min-height: 300px;
+  background: white;
+  color: #2c3e50;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hero--minimal .hero__title {
+  font-size: 36px;
+  color: #2c3e50;
+}
+
+.hero--minimal .hero__description {
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.hero--minimal .hero__subtitle {
+  color: #0181F5;
+  background: rgba(1, 129, 245, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 400px;
+    text-align: center;
+  }
+  
+  .hero__content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .hero__description {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  
+  .hero__actions {
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 28px;
+  }
+  
+  .hero__description {
+    font-size: 16px;
+  }
+  
+  .hero__container {
+    padding: 0 16px;
+  }
+}
